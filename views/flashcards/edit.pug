@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 Edit Flashcard
+
+  form(action='/flashcards/' + flashcard._id + '/update', method='POST')
+    label(for='word') Word:
+    input(type='text', id='word', name='word', value=flashcard.word, required)
+    
+    label(for='translation') Translation:
+    input(type='text', id='translation', name='translation', value=flashcard.translation, required)
+    
+    label(for='example') Example Sentence:
+    input(type='text', id='example', name='example', value=flashcard.example)
+    
+    label(for='topic') Topic:
+    input(type='text', id='topic', name='topic', value=flashcard.topic)
+
+    button(type='submit') Update Flashcard

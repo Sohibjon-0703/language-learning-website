@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  h1 Flashcards
+
+  a(href='/flashcards/create') Add New Flashcard  
+
+  if flashcards.length > 0
+    ul
+      each flashcard in flashcards
+        li
+          strong= flashcard.question
+          span= " - " + flashcard.answer
+          // Edit and Delete links
+          a(href='/flashcards/' + flashcard._id + '/edit') Edit
+          a(href='/flashcards/' + flashcard._id + '/delete') Delete
+  else
+    p No flashcards available.

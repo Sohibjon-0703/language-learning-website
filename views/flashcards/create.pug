@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h1 Create New Flashcard
+
+  form(action='/flashcards/create', method='POST')
+    label(for='word') Word:
+    input(type='text', id='word', name='word', required)
+    
+    label(for='translation') Translation:
+    input(type='text', id='translation', name='translation', required)
+    
+    label(for='example') Example Sentence:
+    input(type='text', id='example', name='example')
+    
+    label(for='topic') Topic:
+    input(type='text', id='topic', name='topic')
+
+    button(type='submit') Submit

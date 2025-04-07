@@ -1,0 +1,10 @@
+html
+  head
+    title Flashcards
+  body
+    h1 Flashcards List
+    ul
+      each flashcard in flashcards
+        li
+          h3= flashcard.question
+          p= flashcard.answer
