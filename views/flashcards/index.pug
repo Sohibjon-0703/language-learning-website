@@ -1,16 +1,19 @@
-extends ../layout.pug
+head
+  title Flashcards
+  link(rel='stylesheet', href='/styles/flashcards.css')
 
-block content
+body
+  a.home-link(href='/') Home
+
   h1 Flashcards
 
-  a(href='/flashcards/create') Add New Flashcard  
+  a(href='/flashcards/create') Add New Flashcard
 
   if flashcards.length > 0
     ul
       each flashcard in flashcards
         li
-          strong= flashcard.question
-          span= " - " + flashcard.answer
+          strong= flashcard.word
           // Edit and Delete links
           a(href='/flashcards/' + flashcard._id + '/edit') Edit
           a(href='/flashcards/' + flashcard._id + '/delete') Delete

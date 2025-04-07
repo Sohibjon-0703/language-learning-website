@@ -1,0 +1,146 @@
+/* public/styles/flashcards.css */
+
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+h1 {
+  font-size: 2.8rem;
+  color: #34495e;
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+/* Add Flashcard Button */
+a[href='/flashcards/create'] {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  padding: 12px 24px;
+  background-color: #1abc9c;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+a[href='/flashcards/create']:hover {
+  background-color: #16a085;
+}
+
+/* Flashcard list */
+ul {
+  list-style-type: none;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Individual flashcard */
+li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Flashcard text */
+li strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #2c3e50;
+}
+
+li span {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Edit & Delete buttons */
+li a {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+li a[href*="edit"] {
+  background-color: #3498db;
+}
+
+li a[href*="edit"]:hover {
+  background-color: #2980b9;
+}
+
+li a[href*="delete"] {
+  background-color: #e74c3c;
+}
+
+li a[href*="delete"]:hover {
+  background-color: #c0392b;
+}
+
+/* No flashcards message */
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 40px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  li {
+    padding: 16px;
+  }
+
+  li a {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  text-decoration: none;
+  background-color: #1abc9c;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.home-link:hover {
+  background-color: #16a085;
+}

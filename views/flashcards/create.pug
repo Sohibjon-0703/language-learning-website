@@ -1,19 +1,24 @@
-extends ../layout
+head
+  title Create New Flashcard
+  link(rel='stylesheet', href='/styles/create-flashcard.css')
 
-block content
-  h1 Create New Flashcard
+body
+  a.home-link(href='/') Home
 
-  form(action='/flashcards/create', method='POST')
-    label(for='word') Word:
-    input(type='text', id='word', name='word', required)
-    
-    label(for='translation') Translation:
-    input(type='text', id='translation', name='translation', required)
-    
-    label(for='example') Example Sentence:
-    input(type='text', id='example', name='example')
-    
-    label(for='topic') Topic:
-    input(type='text', id='topic', name='topic')
+  block content
+    form(action='/flashcards/create', method='POST')
+      h1 Create New Flashcard
 
-    button(type='submit') Submit
+      label(for='word') Word:
+      input(type='text', id='word', name='word', required)
+
+      label(for='translation') Translation:
+      input(type='text', id='translation', name='translation', required)
+
+      label(for='example') Example Sentence:
+      input(type='text', id='example', name='example')
+
+      label(for='topic') Topic:
+      input(type='text', id='topic', name='topic')
+
+      button(type='submit') Submit

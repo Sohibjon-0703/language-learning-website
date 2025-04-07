@@ -1,8 +1,26 @@
-extends layout  
+html
+  head
+    title Language Learning App - Home
+    link(rel='stylesheet', href='/styles/home.css')
+  body
+    nav
+      ul
+        if user
+          li Welcome, #{user.username}
+          li: a(href='/users/logout') Logout
+          li: a(href='/profile') Profile
+        else
+          li: a(href='/users/login') Login
+          li: a(href='/users/register') Sign Up
 
-block content
-  h1 Welcome to the Language Learning App!
-  
-  // Button to navigate to the Flashcards page
-  a(href='/flashcards')
-    button(type='button') Go to Flashcards
+    .home-page
+      h1 Welcome to the Language Learning App!
+      p Start practicing vocabulary with flashcards.
+
+      // Only show the button if the user is logged in
+      if user
+        a(href='/flashcards')
+          button(type='button' class='home-button') Go to Flashcards
+      else
+        a(href='/users/login')
+          button(type='button' class='home-button') Go to Flashcards
