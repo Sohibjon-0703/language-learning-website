@@ -40,7 +40,7 @@ router.post('/register', async (req, res) => {
 
     const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.cookie('token', token, { httpOnly: true });
-    res.redirect('/');
+    res.redirect('/users/login');
   } catch (err) {
     console.error(err);
     res.status(500).send('Error registering user');
