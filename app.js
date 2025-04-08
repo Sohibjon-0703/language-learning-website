@@ -42,13 +42,12 @@ mongoose.connect(mongoDB, {
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-// Make user available to all templates
 app.use((req, res, next) => {
   const token = req.cookies.token;
   if (token) {
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = decoded;         // Now available for routes (e.g., flashcards)
+      req.user = decoded;         
       res.locals.user = decoded;    // Also available in Pug templates
     } catch (err) {
       req.user = null;

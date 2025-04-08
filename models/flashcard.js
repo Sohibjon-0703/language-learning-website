@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// validationn is included
 const flashcardSchema = new mongoose.Schema({
   word: { 
     type: String, 

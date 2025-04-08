@@ -1,4 +1,3 @@
-// middleware/auth.js
 const jwt = require('jsonwebtoken');
 
 module.exports = function isAuthenticated(req, res, next) {
@@ -8,7 +7,7 @@ module.exports = function isAuthenticated(req, res, next) {
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;  // Ensures req.user is set
+    req.user = decoded;  // makee sure req.user is set
     next();
   } catch (err) {
     return res.status(401).json({ message: 'Invalid token' });

@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 router.post('/create', (req, res) => {
-  const { username } = req.body;  // Only take username for creation
+  const { username } = req.body;  
 
   const newUser = new User({ username });
 
@@ -22,7 +22,7 @@ router.post('/create', (req, res) => {
 
 // GET register
 router.get('/register', (req, res) => {
-  res.render('register'); // views/register.pug
+  res.render('register'); 
 });
 
 // POST register
@@ -49,12 +49,12 @@ router.post('/register', async (req, res) => {
 
 // GET login
 router.get('/login', (req, res) => {
-  res.render('login'); // views/login.pug
+  res.render('login'); 
 });
 
 // POST login
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;  // This will work after adding express.urlencoded()
+  const { username, password } = req.body;  
 
   try {
     const user = await User.findOne({ username });
@@ -68,7 +68,6 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    // res.cookie('token', token, { httpOnly: true });
     res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
     res.redirect('/');

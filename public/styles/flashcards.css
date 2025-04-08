@@ -1,5 +1,3 @@
-/* public/styles/flashcards.css */
-
 /* Base styles */
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -36,7 +34,6 @@ a[href='/flashcards/create']:hover {
   background-color: #16a085;
 }
 
-/* Flashcard list */
 ul {
   list-style-type: none;
   padding: 0 20px;
@@ -44,7 +41,7 @@ ul {
   margin: auto;
 }
 
-/* Individual flashcard */
+
 li {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -75,7 +72,7 @@ li span {
   margin-bottom: 12px;
 }
 
-/* Edit & Delete buttons */
+
 li a {
   display: inline-block;
   margin-right: 12px;
@@ -103,7 +100,7 @@ li a[href*="delete"]:hover {
   background-color: #c0392b;
 }
 
-/* No flashcards message */
+
 p {
   text-align: center;
   font-size: 1.1rem;

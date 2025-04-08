@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 // Route to create a new flashcard (GET form)
 router.get('/create', (req, res) => {
-  res.render('flashcards/create');  // Render the form to create a flashcard
+  res.render('flashcards/create');  // FORM rendering
 });
 
 
@@ -55,21 +55,6 @@ router.post('/create', (req, res) => {
 });
 
 
-// // Route to edit a flashcard (GET form)
-// router.get('/:id/edit', (req, res) => {
-//   const { id } = req.params;
-
-//   Flashcard.findOne({ _id: id, userId: req.user._id })  // Only fetch flashcard that belongs to the logged-in user
-//     .then((flashcard) => {
-//       if (!flashcard) {
-//         return res.status(404).send('Flashcard not found or not owned by user');
-//       }
-//       res.render('flashcards/edit', { flashcard });  // Render the form to edit the flashcard
-//     })
-//     .catch((error) => {
-//       res.status(400).send(`Error: ${error.message}`);
-//     });
-// });
 
 // Route to edit a flashcard (GET form)
 router.get('/:id/edit', (req, res) => {
