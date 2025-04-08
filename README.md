@@ -47,24 +47,29 @@ This will start the server, and you can open the application in your browser at 
 00018680/
 │
 ├── controllers
-    └── users
-    └── index.js
+    └── users    # User-related logic (e.g., login, register, profile updates).
+    └── index.js  # Acts as a central hub for exporting/importing controller modules.
+├── middleware
+    └── auth.js  # Handles utility functions for authentication (e.g., token creation, password comparison).
+    └── authMiddleware.js   # Middleware to protect routes, ensuring only authenticated users can access them.
 ├── models
-├── public/              # Static files such as styles and images
-    └── styles.css       # Custom styles for the app
+    └── flashcard.js  # Schema for flashcards (e.g., question, answer, category, user reference).
+    └── user.js  # Schema for users (e.g., username, email, password hash).
+├── public              # Static files such as styles 
+    └── styles           # Custom styles for the app - separate for each one
 ├── routes/              # All route definitions for different parts of the app
-│   └── flashcards.js    # Routes related to flashcards (CRUD operations)
-├── services/
-    └── flashcards
-    └── users 
-├── app.js               # Main entry point for the application
-
+│   └── flashcards    # Routes related to flashcards (CRUD operations)
+        └── index.js
+    └── users
+        └── index.js  # Routes for user actions like registration, login, and logout
+    └── index.js  # Main routing file combining all route modules and registering them with the app.
 ├── views/               # Contains all the Pug templates for the app's UI
-│   ├── layout.pug       # Base layout template
-│   ├── flashcards/      # Templates for flashcard views
-│   └── partials/        # Reusable components like header
+    ├── flashcards/      # Templates for flashcard management pages (e.g., list, new, edit).
+    ├── index.pug        # Homepage template.
+    └── login.pug        # login page
+    └── register.pug     # sign up page
 ├── app.js               # Main entry point for the application
-├── package-lock.json    # 
+├── package-lock.json    # Automatically generated file that locks exact versions of installed dependencies, ensuring consistent setups across environments.
 ├── package.json         # Project metadata and dependencies
 
 
@@ -88,4 +93,3 @@ The application is built with the following technologies:
 3. **Running the App**: Gives instructions on how to run the app after installation.
 4. **Project Structure**: Describes the organization of the project, including important directories and files.
 5. **Tech Stack**: Lists the main technologies used in the project.
-
