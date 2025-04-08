@@ -1,5 +1,5 @@
-const Flashcard = require('../../models/flashcard');
+// const Flashcard = require('../../models/flashcard');
 
-exports.getAllFlashcards = async () => {
-    return await Flashcard.find({});
-};
+// exports.getAllFlashcards = async () => {
+//     return await Flashcard.find({});
+// };

@@ -2,22 +2,37 @@ html
   head
     title Language Learning App - Home
     link(rel='stylesheet', href='/styles/home.css')
+    script.
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      }
+
+      // Optional: Hide dropdown if clicked outside
+      window.onclick = function(event) {
+        const dropdown = document.getElementById("dropdownMenu");
+        if (!event.target.matches('.username')) {
+          dropdown.style.display = "none";
+        }
+      }
+
   body
     nav
       ul
         if user
-          li Welcome, #{user.username}
-          li: a(href='/users/logout') Logout
-          li: a(href='/profile') Profile
+          li.dropdown
+            span.username(onclick='toggleDropdown()') #{user.username}
+            ul#dropdownMenu.dropdown-menu
+              li: a(href='/users/logout') Logout
         else
           li: a(href='/users/login') Login
           li: a(href='/users/register') Sign Up
+
 
     .home-page
       h1 Welcome to the Language Learning App!
       p Start practicing vocabulary with flashcards.
 
-      // Only show the button if the user is logged in
       if user
         a(href='/flashcards')
           button(type='button' class='home-button') Go to Flashcards

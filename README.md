@@ -47,6 +47,8 @@ This will start the server, and you can open the application in your browser at 
 00018680/
 │
 ├── controllers
+    └── users
+    └── index.js
 ├── models
 ├── public/              # Static files such as styles and images
     └── styles.css       # Custom styles for the app

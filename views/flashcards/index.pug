@@ -13,7 +13,12 @@ body
     ul
       each flashcard in flashcards
         li
+     
           strong= flashcard.word
+          strong= flashcard.translation
+          
+          
+          
           // Edit and Delete links
           a(href='/flashcards/' + flashcard._id + '/edit') Edit
           a(href='/flashcards/' + flashcard._id + '/delete') Delete

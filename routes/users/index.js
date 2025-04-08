@@ -40,7 +40,7 @@ router.post('/register', async (req, res) => {
 
     const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.cookie('token', token, { httpOnly: true });
-    res.redirect('/flashcards');
+    res.redirect('/');
   } catch (err) {
     console.error(err);
     res.status(500).send('Error registering user');
@@ -71,7 +71,7 @@ router.post('/login', async (req, res) => {
     // res.cookie('token', token, { httpOnly: true });
     res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
-    res.redirect('/flashcards');
+    res.redirect('/');
   } catch (err) {
     console.error(err);
     res.status(500).send('Error logging in');
@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
 // GET logout
 router.get('/logout', (req, res) => {
   res.clearCookie('token');
-  res.redirect('/users/login');
+  res.redirect('/');
 });
 
 module.exports = router;
